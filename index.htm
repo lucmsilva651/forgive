@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForGiv(e)</title>
+    <audio src="/music/celestial_fantasia.ogg" autoplay="true" loop="true"></audio>
+    <style>
+        body {
+            background-color: papayawhip;
+            text-align: center;
+            font-family: Comic Sans MS, cursive, sans-serif;
+        }
+
+        dialog {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        @media screen and (max-width: 1250px) {
+            dialog {
+                margin: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cursed a lot -->
+    <h1 id="projectName"></h1>
+
+    <p id="dedicatedTo"></p>
+
+    <button onclick="myBible()">The Book of Absurdity: Revelations from the Land of Nonsense</button>
+    <p>You won't find anything interesting here (apart from the Bible above). Try to find a way to see the pure source
+        code of the page and have a laugh. I'm telling you, it's not what you expect. Maybe you can take some
+        screenshots. Whatever you want, I don't care.</p>
+    <p>Sadly, I don't know if I am going to really post this to public in the future, but I hope so.</p>
+    <hr>
+    <p>Website made by Lucas Gabriel (eleu/lucmsilva).</p>
+
+    <p id="notPedo"></p>
+
+    <!-- Cursed dialog -->
+    <dialog open>
+        <p id="forGive"></p>
+        <form method="dialog">
+            <button>Close</button>
+        </form>
+    </dialog>
+
+    <script>
+        // Cursed JavaScript strings
+        // Project name here
+        var ProjectName = "Cursed Coding: ForGiv(e)"
+        document.getElementById("projectName").innerHTML = ProjectName;
+
+        // Shows up who you dedicated this project
+        var DedicatedTo = "Dedicated to a big (virtual) friend of mine, Giv."
+        document.getElementById("dedicatedTo").innerHTML = DedicatedTo;
+
+        // Random dialog text
+        // Array containing phrases
+        var DialogPhrases = [
+            "Tickle your nightmares with fluffy chainsaws, because who said chaos can't be cuddly? Welcome to the circus of twisted dreams where unicorns cry glitter and the laughter is just screams in disguise.",
+            "Beware the giggling goblins and the mischievous muses, for they've conspired to turn our digital realm into a carnival of chaos where even the pixels have personalities!",
+            "Enter if you dare, but beware the snarky sprites and the misbehaving memes lurking in the shadows, ready to hijack your thoughts and tickle your funny bone into submission!",
+            "Welcome to the whimsical wasteland where laughter reigns supreme and the laws of logic have taken a sabbatical. Abandon all seriousness, ye who enter here, for only the absurd survive!",
+            "Prepare for a plunge into the abyss of absurdity, where the rivers flow with melted rainbows and the clouds are made of cotton candy spiked with sass. Hold onto your hats, folks – it's gonna be a bumpy ride!",
+            "Brace yourselves for the onslaught of silliness and the bombardment of banter as you step into the arena of amusement, where the jesters jest and the jests jest back. May your wits be sharp and your funny bone unbreakable!",
+            "Strap on your seatbelt made of rubber chickens and hold tight as we navigate the rollercoaster of whimsy through the carnival of the mind! Welcome to a world where reality wears a tutu and gravity is just a suggestion.",
+            "Caution: Proceed with care, for the corridors of our digital domain are lined with mirrors that distort reality and warp perceptions. Step lightly, lest you stumble into a vortex of absurdity where the only way out is through laughter.",
+            "Dive headfirst into the swirling sea of surrealism, where the waves are made of liquid laughter and the mermaids sing off-key renditions of nursery rhymes. Sail at your own risk, for the compass of reason is useless in these waters.",
+            "Prepare for a journey into the unknown, where the compass points north by northwest and the road less traveled is paved with banana peels. Leave your expectations at the door, for here, the only certainty is uncertainty.",
+            "Welcome to the funhouse of the mind, where reality is but a fun-sized candy bar in the buffet of imagination. Enter with an open mind and a sturdy funny bone, for you're about to embark on a wild ride through the carnival of consciousness.",
+            "Strap on your jetpack fueled by cosmic giggles and soar through the galaxy of absurdity! Here, the stars are disco balls, and the planets throw the best parties this side of the Milky Way.",
+            "Enter the labyrinth of lunacy, where the walls whisper jokes and the floor is paved with banana peels. Navigate with caution, for every wrong turn leads deeper into the maze of madness.",
+            "Prepare to be whisked away on a whirlwind adventure through the kaleidoscope of chaos! Grab your umbrella, because when it rains cats and dogs, you'll need protection from the flying fur and wet noses.",
+            "Welcome to the circus of the mind, where the tightrope is made of spaghetti, and the lions roar with laughter. Step right up and witness the greatest show on Earth – or any other planet, for that matter!",
+            "Brace yourself for a plunge into the pool of pandemonium, where the waters are warm with mischief and the lifeguard blows a kazoo instead of a whistle. Dive in headfirst, and let the waves of wackiness wash over you!",
+            "Welcome to the whimsical wonderland where the skies are painted with rainbows and the clouds gossip with the stars. Leave your troubles at the door and let the dance of absurdity sweep you away!",
+            "Prepare to embark on a journey through the corridors of chaos, where the walls whisper secrets and the floorboards creak with laughter. Take a leap of faith into the unknown, and let the adventure begin!",
+            "Step into the carnival of curiosity, where the ferris wheel of fate spins wildly and the cotton candy of chaos melts in your mouth. Embrace the unpredictability and let the merry-go-round of madness carry you away!",
+            "Brace yourself for a plunge into the pool of perplexity, where the waters run deep with wit and the lifeguard is a mermaid with a megaphone. Dive into the depths of absurdity and swim with the sharks of silliness!",
+            "Welcome to the kaleidoscope of comedy, where every twist and turn reveals a new shade of hilarity. Strap on your goggles and prepare for a wild ride through the prism of parody!",
+            "Enter the labyrinth of laughter, where the walls are lined with jokes and the minotaur wears a clown nose. Navigate with wit and whimsy, and you may just find the exit to enlightenment!",
+            "Prepare to be whisked away on a whirlwind adventure through the carnival of confusion, where the rollercoaster of reality has no seatbelts and the funhouse mirrors reflect the absurdity of existence!",
+            "Step right up and join the parade of pandemonium, where the clowns wear crowns and the elephants juggle flaming torches. Grab your popcorn and enjoy the spectacle of silliness!",
+            "Welcome to the circus of the senses, where the acrobats defy gravity and the lion tamer wrestles with words. Take a deep breath and let the aroma of absurdity fill your nostrils!",
+            "Prepare to have your mind blown by the fireworks of folly, as we celebrate the festival of foolishness with a bang! Grab your sparklers and join the party of preposterousness!"
+        ];
+        
+        // Function to display the array in the dialog
+        function getDialogRandomPhrase() {
+            var randomIndex = Math.floor(Math.random() * DialogPhrases.length);
+            return DialogPhrases[randomIndex];
+        }
+
+        // TODO: Destroy HTML
+        var DialogRandomPhrase = getDialogRandomPhrase();
+        document.getElementById("forGive").innerHTML = DialogRandomPhrase;
+
+        // Joke about false accusations of him
+        // HE IS NOT A PEDOPHILE
+        var NotPedoRandom = [
+            "No kids harmed during site development, just a lot of coffee consumed.",
+            "Rest assured, our website is child-friendly - no harm done.",
+            "No children harmed in making this website, just lots of laughter.",
+            "Our website is safe for kids - no harm came to them.",
+            "No kids were harmed in creating this website, only a few giggles.",
+            "Our website: safe for kids, no harm done.",
+            "No children harmed during site development, just a few jokes cracked.",
+            "Fear not, parents! No harm came to any kids in creating our site.",
+            "No kids harmed in making our website, just creativity flowing.",
+            "Our website is kid-proof - no harm done.",
+            "No children were harmed in the crafting of our site, just a sprinkle of whimsy.",
+            "Rest easy, parents! Our website development was kid-friendly, no harm done.",
+            "No kids harmed in creating this website, only smiles and high-fives.",
+            "Our website is a kid-friendly zone - no harm, just fun.",
+            "No children were harmed during the development of our site, just a dash of imagination.",
+            "Our website development was gentle as a breeze - no harm to kids or developers.",
+            "No kids were harmed during the making of our website, just a pinch of magic.",
+            "Our website: 100% child-safe, no harm, only joy.",
+            "No children were harmed in the making of this website, just a few brainstorming sessions.",
+            "Our website development was smooth sailing - no kids harmed, just a lot of creativity.",
+            "No kids were harmed during the creation of our site, just a sprinkle of innovation.",
+        ];
+
+        // Same thing as above
+        function getNotPedoRandomPhrase() {
+            var randomIndex = Math.floor(Math.random() * NotPedoRandom.length);
+            return NotPedoRandom[randomIndex];
+        }
+
+        // Jesus Christ
+        var NotPedoRandomPhrase = getNotPedoRandomPhrase();
+        document.getElementById("notPedo").innerHTML = NotPedoRandomPhrase;
+        notPedo.style.fontSize = "10px";
+
+        // My bible
+        function download(filename, text) {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename);
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
+        // The bible itself 
+        function myBible() {
+            var text = `# Title: "The Book of Absurdity: Revelations from the Land of Nonsense"
+# Made by Lucas Gabriel (lucmsilva)
+# Part of the Cursed Coding project
+# Turn on word wrap to read this bible!
+
+Chapter 1: The Genesis of Giggle
+
+In the beginning, there was chaos, and chaos said, "Let there be laughter!" And thus, the universe erupted in a cacophony of chuckles and snorts.
+
+Chapter 2: The Exodus of Eccentricity
+
+And lo, the people of the land embarked on a journey through the wilderness of weirdness, led by a flamingo with a top hat and a penchant for puns.
+
+Chapter 3: Levity Levitations
+
+They reached the mountain of levity, where the air was thick with whimsy and the clouds were made of cotton candy. There, they received the Ten Commandments of Tomfoolery, written in bubble letters.
+
+Chapter 4: Numbers and Nonsense
+
+The census was taken, but instead of counting heads, they counted belly laughs and high-fives. And it was good.
+
+Chapter 5: Deuter-LOL-omy
+
+Moses, in his wisdom, spoke unto the people, saying, "Thou shalt not take life too seriously, for thou shalt never get out of it alive."
+
+Chapter 6: The Book of Jokes
+
+And it came to pass that the prophets of hilarity regaled the masses with tales of slapstick and wordplay, and the people roared with laughter until tears streamed down their faces.
+
+Chapter 7: The Psalms of Silly
+
+"Sing praises to the absurdity of existence," they sang, "for in the folly of folly, we find true joy."
+
+Chapter 8: The Proverbs of Pranks
+
+"Better to be a fool with a grin than a sage with a frown," they proclaimed, "for laughter is the currency of the soul."
+
+Chapter 9: Ecclesiastes of Eccentricity
+
+"Vanity, vanity, all is vanity," said the wise clown, "except a pie in the face, that's just hilarious."
+
+Chapter 10: Revelations of Ridiculousness
+
+And in the end, they beheld a vision of the ultimate punchline, where the universe itself dissolved into a fit of cosmic giggles, and all was absurdly well.
+
+Appendix: The Glossary of Goofiness
+
+Containing definitions of terms such as "silliness," "shenanigans," and "balderdash," this appendix serves as a guide to navigating the whimsical world of absurdity.
+
+Thus concludes "The Book of Absurdity," where every page is a punchline and every chapter a celebration of the wonderfully weird. May your days be filled with laughter and your hearts light as a feather boa in a hurricane.`;
+            download("TheBookOfTheAbsurdity.txt", text);
+        }
+    </script>
+</body>
+
+</html>
