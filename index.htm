@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <audio controls autoplay>
+      <source src="music/celestial_fantasia.ogg" type="audio/ogg">
+      Your browser does not support the audio element.
+    </audio>
     <title>ForGiv(e)</title>
     <style>
         body {
@@ -49,22 +53,6 @@
     </dialog>
 
     <script>
-        // JavaScript music
-        var audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        var request = new XMLHttpRequest();
-        request.open('GET', 'music/celestial_fantasia.ogg', true);
-        request.responseType = 'arraybuffer';
-
-        request.onload = function () {
-            var audioData = request.response;
-            audioContext.decodeAudioData(audioData, function(buffer) {
-                var audioSource = audioContext.createBufferSource();
-                audioSource.buffer = buffer;
-                audioSource.connect(audioContext.destination);
-                audioSource.start(0);
-            });
-        };
-        
         // Cursed JavaScript strings
         // Project name here
         var ProjectName = "Cursed Coding: ForGiv(e)"
